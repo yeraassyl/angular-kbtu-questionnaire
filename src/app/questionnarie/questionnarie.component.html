@@ -1,0 +1,40 @@
+<div>
+    <label for="title">Question</label>
+    <input type="text" [(ngModel)]="title" name="title">
+</div>
+
+<div>
+    <label for="o1">first option</label>
+    <input type="text" [(ngModel)]="o1" name="o1">
+    <input type="checkbox" [(ngModel)]="right1">
+</div>
+
+<div>
+    <label for="o2">second option</label>
+    <input type="text" [(ngModel)]="o2" name="o2">
+    <input type="checkbox" [(ngModel)]="right2">
+</div>
+
+
+<div>
+    <label for="o3">third option</label>
+    <input type="text" [(ngModel)]="o3" name="o3">
+    <input type="checkbox" [(ngModel)]="right3">
+</div>
+
+
+<div>
+    <label for="o4">fourth option</label>
+    <input type="text" [(ngModel)]="o4" name="o4">
+    <input type="checkbox" [(ngModel)]="right4">
+</div>
+
+<button (click)="addQuestion()">Add Question</button>
+
+
+<div *ngFor="let question of questions">
+    <div>{{question.title}}         <button (click)="deleteQuestion(question.title)">Delete question</button></div>
+    
+</div>
+
+<button (click)="saveQuestionnaire()">Save</button>
